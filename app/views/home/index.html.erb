@@ -1,0 +1,361 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Free Adidas Website Template | Home :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/assets/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="/assets/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".dropdown img.flag").addClass("flagvisibility");
+
+			$(".dropdown dt a").click(function () {
+				$(".dropdown dd ul").toggle();
+			});
+
+			$(".dropdown dd ul li a").click(function () {
+				var text = $(this).html();
+				$(".dropdown dt a span").html(text);
+				$(".dropdown dd ul").hide();
+				$("#result").html("Selected value is: " + getSelectedValue("sample"));
+			});
+
+			function getSelectedValue(id) {
+				return $("#" + id).find("dt a span.value").html();
+			}
+
+			$(document).bind('click', function (e) {
+				var $clicked = $(e.target);
+				if (!$clicked.parents().hasClass("dropdown"))
+					$(".dropdown dd ul").hide();
+			});
+
+
+			$("#flagSwitcher").click(function () {
+				$(".dropdown img.flag").toggleClass("flagvisibility");
+			});
+		});
+	</script>
+	<!-- start menu -->
+	<link href="/assets/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="/assets/megamenu.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".megamenu").megamenu();
+		});
+	</script>
+	<!-- end menu -->
+	<!-- top scrolling -->
+	<script type="text/javascript" src="/assets/move-top.js"></script>
+	<script type="text/javascript" src="/assets/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1200);
+			});
+		});
+	</script>
+</head>
+
+<body>
+<!--
+	 <div class="index-banner">
+		<div class="wmuSlider example1" style="height: 560px;">
+			<div class="wmuSliderWrapper">
+				<article style="position: relative; width: 100%; opacity: 1;">
+					<div class="banner-wrap">
+						<div class="slider-left">
+							<img src="/assets/banner1.jpg" alt="" />
+						</div>
+						<div class="slider-right">
+							<h1>Classic</h1>
+							<h2>White</h2>
+							<p>Lorem ipsum dolor sit amet</p>
+							<div class="btn">
+								<%= link_to "Shop Now", store_index_path %>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</article>
+				<article style="position: absolute; width: 100%; opacity: 0;">
+					<div class="banner-wrap">
+						<div class="slider-left">
+							<img src="/assets/banner2.jpg" alt="" />
+						</div>
+						<div class="slider-right">
+							<h1>Classic</h1>
+							<h2>White</h2>
+							<p>Lorem ipsum dolor sit amet</p>
+							<div class="btn">
+								<%= link_to "Shop Now", store_index_path %>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</article>
+				<article style="position: absolute; width: 100%; opacity: 0;">
+					<div class="banner-wrap">
+						<div class="slider-left">
+							<img src="/assets/banner1.jpg" alt="" />
+						</div>
+						<div class="slider-right">
+							<h1>Classic</h1>
+							<h2>White</h2>
+							<p>Lorem ipsum dolor sit amet</p>
+							<div class="btn">
+								<%= link_to "Shop Now", store_index_path %>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</article>
+				<article style="position: absolute; width: 100%; opacity: 0;">
+					<div class="banner-wrap">
+						<div class="slider-left">
+							<img src="/assets/banner2.jpg" alt="" />
+						</div>
+						<div class="slider-right">
+							<h1>Classic</h1>
+							<h2>White</h2>
+							<p>Lorem ipsum dolor sit amet</p>
+							<div class="btn">
+								<%= link_to "Shop Now", store_index_path %>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</article>
+				<article style="position: absolute; width: 100%; opacity: 0;">
+					<div class="banner-wrap">
+						<div class="slider-left">
+							<img src="/assets/banner1.jpg" alt="" />
+						</div>
+						<div class="slider-right">
+							<h1>Classic</h1>
+							<h2>White</h2>
+							<p>Lorem ipsum dolor sit amet</p>
+							<div class="btn">
+								<%= link_to "Shop Now", store_index_path %>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</article>
+			</div>
+					<div class="clear"></div>
+		
+			</div>
+		<script src="/assets/jquery.wmuSlider.js"></script>
+		<script type="text/javascript" src="/assets/modernizr.custom.min.js"></script>
+		<script>
+			$('.example1').wmuSlider();
+		</script>
+	</div>
+		<div class="main">
+		<div class="wrap">
+			<% @spnew.each do |product| %>
+
+				<div class="box1">
+
+					<div class="col_1_of_single1 span_4_of_single1">
+							<div class="view1 view-fifth1">
+								<div class="top_box">
+									<%= link_to product do %>
+										
+										<div class="grid_img">
+
+
+
+											<%= image_tag product.image.url(:medium), :size =>"275x275"%>
+
+
+
+										</div>
+										<br>
+										<p class="m_2">
+											<%= product.description %>
+										</p>
+										<br>
+										<h3 class="m_1">
+											<%= product.title %>
+										</h3>
+										<br>
+										<div class="price">
+											<%= number_to_currency(product.price) %>
+										</div>
+										<% end %>
+								</div>
+							</div>
+
+							</li>
+							</ul>
+							<div class="clear"></div>
+						</a>
+					</div>
+
+				</div>
+				<% end %> %>
+					</a>
+					</a>
+					</a>
+					</a>
+					</a>
+
+					<div class="clear"></div>
+					<div class="clear"></div>
+					</a> 
+		</div>-->
+			<div class="clear"></div>
+
+	<div class="main">
+		<div class="wrap">
+<div class="index-banner">
+		<div class="wmuSlider example1" style="height: 560px;">
+			<div class="wmuSliderWrapper">
+				<article style="position: relative; width: 100%; opacity: 1;">
+					<div class="banner-wrap">
+						<div class="slider-righta">
+							<img src="/assets/hihi.jpg" alt="" width = "100%" height = "100%"/>
+						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<div class="slider-right">
+							<h2>CONGRATULATIONS, JAMES HARDEN</h2>
+							<p>Introducing the MVP. Dreams become reality. James Harden always knew. Now everyone sees the vision</p>
+							<div class="btn">
+								<%= link_to "Shop Now", store_index_path %>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</article>
+
+
+							<div class="clear"></div>
+					</div>
+				</div>
+					</div>	
+						</div>
+							</div>
+								</div>
+									</div>
+										</div>
+
+<br>
+<br>
+<br>
+<hr>
+					</div>	
+						<div class="clear"></div>
+					</div>
+
+
+				<div class="mens-toolbar">
+					<div class="sort">
+						<div class="sort-by">
+
+						</div>
+					</div>
+					<div class="pager">
+						<ul class="dc_pagination dc_paginationA dc_paginationA06">
+							<li>
+								<a href="#" class="previous"></a>
+							</li>
+
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+					<div class="clear"></div>
+					<div class="ransack-pagination" , panding>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class = "ajax">
+
+
+	<div class="main">
+		<div class="wrap">
+					<h1 class= "hv">New Arrivals</h1>
+			<% @spnew.each do |product| %>
+
+				<div class="box1">
+
+						<div class="col_1_of_single1 span_4_of_single1">
+							<a href="#">
+								<div class="view1 view-fifth1">
+									<div class="top_box">
+									
+									<%if product.hot%>
+							<a class = "hv2"> Exclusive </a>
+								<%end%>
+													<%= link_to product do %>
+							
+						
+										<div class="grid_img">
+
+
+												
+													<%= image_tag product.image.url(:medium), :size =>"275x275"%>
+													
+												
+											
+										</div>
+														<p class="m_2"><%= product.type.typename %></p>
+													<h3 class="m_1">
+											<%= product.title %>
+										</h3>
+										<div class="price">
+											<%= number_to_currency(product.price) %>
+										</div>
+													<% end %>
+									</div>
+								</div>
+
+									</li>
+								</ul>
+								<div class="clear"></div>
+							</a>
+						</div>
+			
+						</div>
+				<% end %>
+					</a>
+					</a>
+					</a>
+					</a>
+					</a>
+
+					<div class="clear"></div>
+					<div class="clear"></div>
+					</a>
+		</div>
+
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+</body>
+
+</html>
